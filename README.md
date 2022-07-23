@@ -20,4 +20,4 @@ Next, install all the required dependencies from **Pipfile** using Pipenv as sho
 
 SR No   | Project |
 --- | --- 
-1 | [Titanic - Machine Learning from Disaster](https://github.com/sumanentc/Python-Projects/tree/master/projects/Rock_Paper_Scissors)
+1 | [Titanic - Machine Learning from Disaster](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Titanic.ipynb)
