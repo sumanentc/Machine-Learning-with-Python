@@ -1,4 +1,6 @@
-# Python Machine Learning Jupyter Notebooks
+# Python Machine Learning with Jupyter Notebooks
+
+![Machine Learning](machine-learning.avif)
 
 ### Jupyter notebooks containing sample usage of various algorithms using scikit-learn.
 
