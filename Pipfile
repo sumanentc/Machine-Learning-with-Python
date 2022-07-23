@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+scikit-learn = "*"
+jupyter-contrib-nbextensions = "*"
+nltk = "*"
+seaborn = "*"
+jupyter-nbextensions-configurator = "*"
+pandas-datareader = "*"
+cufflinks = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
