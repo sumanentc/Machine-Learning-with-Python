@@ -23,3 +23,4 @@ Next, install all the required dependencies from **Pipfile** using Pipenv as sho
 SR No   | Project |
 --- | --- 
 1 | [Titanic - Machine Learning from Disaster](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Titanic.ipynb)
+2 | [Loan Repayment](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Loan_Payment.ipynb)
