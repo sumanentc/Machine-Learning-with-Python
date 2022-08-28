@@ -1,0 +1,258 @@
+Delivered-To: sumanentc@gmail.com
+Received: by 2002:a05:7300:5349:b0:6b:54b0:40cc with SMTP id o9csp1166395dye;
+        Sun, 28 Aug 2022 03:02:17 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR4IT/CjvUan2ri/jE0uEgdv3/AJRiDGOS1y+1ezERpLTRABcTdrPF4PGHQ0rZ9+cp/PUFul
+X-Received: by 2002:a17:902:f606:b0:172:6522:4bfc with SMTP id n6-20020a170902f60600b0017265224bfcmr11366746plg.133.1661680937012;
+        Sun, 28 Aug 2022 03:02:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1661680937; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EL8IuLEljUbM6HydcI/bCwH2RHAd7pjpLgRbqmnDnYZU5CCNf66+QfoS+qh1EZYbXz
+         D8zQGXbK65/KQmPxSzOsWbGCbHmmonOu6udWUx8xK14YQ+hTG6g7ufQO06vvhZ/1zQIn
+         5GLwRF1gXTcRb7hlV9XMdfkBAGF22eWgS7LQhhjV5ZlV2kYs/gsIgxQj43Qt9jwpRCgr
+         2TL2uz2HS8cGQQJ+TEAQJJTrQrbnGo9yZN0xibo9GYsUuY/VpG+iUlJ2aScEWV2r4GyZ
+         Hf1yUzULLQAKDcbAcZd9KlSXoYoJT+7J4EWd5ORiCTu6wDL5jt6RtxKyshlCP8+9cJqJ
+         mLXg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:list-unsubscribe:message-id:mime-version
+         :reply-to:to:date:subject:from:dkim-signature;
+        bh=a8c9gk3slw8A6hHe/b1heOSUC61i0wIFi3a2kf7EpwE=;
+        b=pJ/an5ePkvqudOy0V+sQOTRYl95g3/RFtaseAF+ej4sf4y9rQjQrhY4fd/JZ+e0DNu
+         gEC3sk3+xjfHlmkle8/tl6fjoFq0t8hacBgXt0kY+LhIpKSa8p+TISyEJhP81U3CR5wL
+         qATJ6z0oQqRgbgXnfj/Weg7Stglm32eo0GpFT/qgiWSM0PwLNZkDeEYxUikaBZoXanld
+         AA87HwyBWVRXxN4/+DKm/cPY2OPRsRVo3838OkcW58309jbvuRHuFq5L66dku9Q8D9sM
+         7l6F+BaqjLLrzjQLJBzkcrnhHxWqi2kDOsc9L+K+IZkh9XPmBwG+sJjRwxuyL7Kj6KBr
+         BdYw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.fc-promotions.in header.s=freecharge header.b=kVO5VE8a;
+       spf=pass (google.com: domain of bounce@email.fc-promotions.in designates 130.248.136.162 as permitted sender) smtp.mailfrom=bounce@email.fc-promotions.in
+Return-Path: <bounce@email.fc-promotions.in>
+Received: from r162.email.fc-promotions.in (r162.email.fc-promotions.in. [130.248.136.162])
+        by mx.google.com with ESMTPS id i1-20020a63b301000000b0042ac5388ff4si7013498pgf.508.2022.08.28.03.02.15
+        for <sumanentc@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 28 Aug 2022 03:02:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce@email.fc-promotions.in designates 130.248.136.162 as permitted sender) client-ip=130.248.136.162;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.fc-promotions.in header.s=freecharge header.b=kVO5VE8a;
+       spf=pass (google.com: domain of bounce@email.fc-promotions.in designates 130.248.136.162 as permitted sender) smtp.mailfrom=bounce@email.fc-promotions.in
+Return-Path: <bounce@email.fc-promotions.in>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=email.fc-promotions.in; s=freecharge; t=1661680934;
+	bh=a8c9gk3slw8A6hHe/b1heOSUC61i0wIFi3a2kf7EpwE=;
+	h=From:Subject:Date:To:MIME-Version:Message-ID:List-Unsubscribe:
+	 Content-Type;
+	b=kVO5VE8aQWUHKFN5l2eeog2WXItyjcMuW4j5uCQ5BW3AsmZyjL2tY5rj2Df9cVU5S
+	 5oQ4bAw6XhHvLvLCYcxoptVyUi7svut1zhnYZeGZb9cOf0T5v6fk77HJauSOv2qLiW
+	 YJPa7NTLGPV517FUcT3t3+RIamp3/DumxGJYefhIkHV3rf68VCv3mo8MyF6O6J8J9n
+	 Nn9Jxmft7aP6rDErFU8fDcKRzOXTd//B5OSLtzZtmNNxDqUN38AxRoHkh6t15sRjpw
+	 MZUKbUS6+9ECPms4l4a9whf7kf3woBZAWxGNFLBKB4Ycp1GzBxCMCmioVIMdE2Uzmn
+	 Nr8K0vUmL7o+g==
+X-MSFBL: woXqfKKhzVXKRiHVoCBtVM7bxNXKkOKC/Y/ISPA+dhA=|eyJyY3B0X21ldGEiOns
+	gImluIjogImZyZWVjaGFfbWlkX3Byb2QxIiwgInIiOiAic3VtYW5lbnRjQGdtYWl
+	sLmNvbSIsICJtIjogIjU2ODk2MTg4MCIsICJkIjogIjU3MDM2MzU0IiwgImkiOiA
+	iIiB9LCJiIjoiYXdzX2ZyZWVjaGFyZ2VwYXltZW50X3Byb2QxX3Byb2QuZGVmYXV
+	sdF9tb21lbnR1bTA2X210YTAwNV8xMzAuMjQ4LjEzNi4xNjIiLCJyIjoic3VtYW5
+	lbnRjQGdtYWlsLmNvbSIsImciOiJwcm9kLmRlZmF1bHRfMTExZjFjNDItNGM0Ni0
+	0MGRmLThlYWMtOTVkNGQ2ZmYzMWUwIn0=
+Received: from [10.84.255.136] ([10.84.255.136:34471] helo=r171.email.fc-promotions.in)
+	by momentum06.sin2.cpt.adobe.net (envelope-from <bounce@email.fc-promotions.in>)
+	(ecelerity 4.2.31.59853 r(Core:4.2.31.1)) with ESMTP
+	id EF/3B-22064-62D3B036; Sun, 28 Aug 2022 03:02:14 -0700
+From: "Freecharge" <no-reply@email.fc-promotions.in>
+Subject: =?utf-8?B?QXNzdXJlZCBncmVhdCByZXR1cm5zIGFuZCBjYXNoYmFjayBhdw==?=
+ =?utf-8?B?YWl0IHlvdfCfpJE=?=
+Date: Sun, 28 Aug 2022 15:32:12 +0530
+To: <sumanentc@gmail.com>
+Reply-To: "Freecharge" <bounce@email.fc-promotions.in>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM612EFE2EC03664E42freecha_mid_prod1@email.fc-promotions.in>
+List-Unsubscribe: <mailto:bounce@email.fc-promotions.in?subject=unsubscribe%3CNM612EFE2EC03664E42freecha_mid_prod1@email.fc-promotions.in%3E>
+Content-Type: text/html;
+	charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=3D"utf-8">        
+        <title>FD VKYC</title>  
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1.0"> 
+        <link rel=3D"shortcut icon" href=3D"https://www.freecharge.in/deskt=
+op/https://offers.freecharge.in/FDVKYCMailer28Aug/favicon.ico"> 
+        <style> 
+            @media only screen and (max-width: 480px){ 
+                .m-font p{
+                    font-size: 15px !important;
+                    line-height: 1.3;
+                }
+            }
+        </style>
+    </head>
+    <body style=3D" margin:0; padding: 0; font-family:source sans pro, Helv=
+etica Neue,Helvetica,Arial,sans-serif; background-color: #fff; color: #3e3e=
+3e;">
+        <table style=3D"max-width:600px; margin:0 auto; width: 100%; font-s=
+ize: 21px; line-height: 1.4; border-collapse: collapse; table-layout: fixed=
+; background-color: #fff;" align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"m-font" >           
+            <tr>
+                <td>
+                    <img src=3D"http://res.email.fc-promotions.in/res/img/7=
+C623DF990FCC4DFABF34CB7E15D795D.jpg" alt=3D"Cashback" style=3D"max-width: 1=
+00%; height: auto; display: block;">
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <img src=3D"http://res.email.fc-promotions.in/res/img/7=
+28FB3BB2C345CB84CB5840FDB344940.jpg" alt=3D"banner" style=3D"max-width: 100=
+%; height: auto; display: block;">
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <img src=3D"http://res.email.fc-promotions.in/res/img/E=
+203F36F22C349F1E013C5C1246EC9F0.jpg" alt=3D"banner" style=3D"max-width: 100=
+%; height: auto; display: block;">
+                </td>
+            </tr> 
+            
+            <tr>
+                <td>
+                    <img src=3D"http://res.email.fc-promotions.in/res/img/F=
+741B3B8F6EDF6E4AE328BB15226E99E.jpg" alt=3D"banner" style=3D"max-width: 100=
+%; height: auto; display: block;">
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    <a href=3D"http://t.email.fc-promotions.in/r/=3Fid=3Dh2=
+1e9ab58,126c5c72,7f8c9987" target=3D"_blank"><img src=3D"http://res.email.f=
+c-promotions.in/res/img/1ED460208321590387873E80EFD7C6CF.jpg" alt=3D"Open F=
+D Now" style=3D"max-width: 100%; height: auto; display: block;">
+                    </a>
+                </td>
+            </tr>   
+                          
+
+            <tr>
+                <td style=3D"padding:2% 0px 0px;">
+                    <table style=3D"margin:0 auto; width: 86%; border-colla=
+pse: collapse; background-color: #fff;" align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0"> 
+                        <tbody>                            
+                        <tr>
+                            <td id=3D"m-font">
+                                <p style=3D"text-align: center; font-size: =
+18px; line-height: 1.6; 
+                                    font-weight: 600; color: #444;">
+                                    Simplifying finance your way. Your one-=
+stop destination for Buy Now Pay Later, Loans, Credit Card, Investments, Bi=
+ll payments, Recharges, Payment of house rent and much more.
+                                </p>
+                            </td>
+                        </tr> 
+
+                        <tr>
+                            <td style=3D"background-color: #fff; padding:3%=
+ 0px 5%;">
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0">
+                                    <tbody>
+                                        <tr>                            
+                                        <td style=3D"text-align: center;">
+                                            <a href=3D"http://t.email.fc-pr=
+omotions.in/r/=3Fid=3Dh21e9ab58,126c5c72,7f8c9988" target=3D"_blank"><img s=
+rc=3D"http://res.email.fc-promotions.in/res/img/0AC2A0FA0804C71A0E5F8C46F99=
+574DB.png" alt=3D"" border=3D"0" style=3D"max-width: 100%; margin:0 auto; p=
+adding-right: 10px;">
+                                            </a>
+                                        </td>                              =
+ 
+
+                                        <td style=3D"text-align: center;">
+                                            <a href=3D"http://t.email.fc-pr=
+omotions.in/r/=3Fid=3Dh21e9ab58,126c5c72,7f8c9989" target=3D"_blank"><img s=
+rc=3D"http://res.email.fc-promotions.in/res/img/D9E53DB36361A51D820C3BCBD1F=
+DB610.png" alt=3D"" border=3D"0" style=3D"max-width: 100%; margin:0 auto; p=
+adding-right: 10px;">
+                                            </a>
+                                        </td>
+                                        <td style=3D"text-align: center;">
+                                            <a href=3D"http://t.email.fc-pr=
+omotions.in/r/=3Fid=3Dh21e9ab58,126c5c72,7f8c998a&cid=3DfchDM190770&bid=3D5=
+68961880" target=3D"_blank"><img src=3D"http://res.email.fc-promotions.in/r=
+es/img/20C32ACAAE211E0447BE377BD513D7A0.png" alt=3D"" border=3D"0" style=3D=
+"max-width: 100%; margin:0 auto; padding-right: 10px;">
+                                            </a>
+                                        </td> 
+                                        <td style=3D"text-align: center;">
+                                            <a href=3D"http://t.email.fc-pr=
+omotions.in/r/=3Fid=3Dh21e9ab58,126c5c72,7f8c998b" target=3D"_blank"><img s=
+rc=3D"http://res.email.fc-promotions.in/res/img/F86F5FB95978F8CFF40B098FE5A=
+1469A.png" alt=3D"" border=3D"0" style=3D"max-width: 100%; margin:0 auto; p=
+adding-right: 10px;">
+                                            </a>
+                                        </td>                           
+                                        
+                                        <td style=3D"text-align: center;">
+                                            <a href=3D"http://t.email.fc-pr=
+omotions.in/r/=3Fid=3Dh21e9ab58,126c5c72,7f8c998c" target=3D"_blank"><img s=
+rc=3D"http://res.email.fc-promotions.in/res/img/8498F5DD76423B6DAC0CDDFB345=
+27E40.png" alt=3D"" border=3D"0" style=3D"max-width: 100%; margin:0 auto;">
+                                            </a>
+                                        </td>                              =
+         
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=3D"text-align: center; font-size: 17p=
+x; line-height: 22px; 
+                                color: #777777;">
+                                <p style=3D"margin-top: 0px;">=A9 Freecharg=
+e</p>
+                                <p style=3D"margin:0px;">11<sup>th</sup> Fl=
+oor, DLF CyberGreens, DLF City, DLF</p>
+                                <p style=3D"margin:0px;">Phase 2, Sector 24=
+, Gurugram, Haryana 122002</p>
+                            </td>
+                        </tr>                                              =
+ 
+                    </tbody>
+                </table>                    
+                </td>
+            </tr>
+      <tr>
+                <td>
+                    <img src=3D"http://res.email.fc-promotions.in/res/img/4=
+4C1A81717C05D49C10403935480B453.png" alt=3D"" border=3D"0" style=3D"max-wid=
+th: 100%; display: block; margin:0 auto;">
+                </td>
+            </tr>
+      <td style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-=
+serif;font-size:16px;font-weight:300;line-height:1.3;margin:0;padding:0;tex=
+t-align:left"><p style=3DMargin:0;Margin-bottom:10px;color:#9a9795;font-fam=
+ily:Helvetica,Arial,sans-serif;font-size:12px;font-weight:300;line-height:2=
+5px;margin:0;margin-bottom:10px;padding:0;padding-bottom:0;padding-left:30p=
+x;padding-right:30px;text-align:left>
+If you do not wish to receive any further communications, please 
+<a href=3D"http://t.email.fc-promotions.in/r/=3Fid=3Dh21e9ab58,126c5c72,7f8=
+c998d&cid=3DfchDM190770&bid=3D568961880&p1=3D%40x4KVS8i1Jgx6EsVTLK0j3A%3D%3=
+D" _label=3D"Opt-out link" _type=3D"optout" style=3D"Margin:0;color:#9a9795=
+;font-family:Helvetica,Arial,sans-serif;font-size:12px;font-weight:300;line=
+-height:1.3;margin:0;padding:0;text-align:left;text-decoration:underline" t=
+itle=3D"Click Here">click here</a>
+</p>
+
+</td>
+      </tr>
+        </table>
+    <img height=3D'0' width=3D'0' alt=3D'' src=3D'http://t.email.fc-promoti=
+ons.in/r/=3Fid=3Dh21e9ab58,126c5c72,1'/></body>
+</html>
+
