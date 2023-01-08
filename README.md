@@ -25,3 +25,4 @@ SR No   | Project |
 1 | [Titanic - Machine Learning from Disaster](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Titanic.ipynb)
 2 | [Loan Repayment](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Loan_Payment.ipynb)
 3 | [Spam Classifier](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/spam_classifier.ipynb)
+4 | [Breast Cancer Detection](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/breast_cancer_classifier.ipynb)
