@@ -26,3 +26,4 @@ SR No   | Project |
 2 | [Loan Repayment](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Loan_Payment.ipynb)
 3 | [Spam Classifier](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/spam_classifier.ipynb)
 4 | [Breast Cancer Detection](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/breast_cancer_classifier.ipynb)
+5 | [Generate Handwritten Digits using GAN](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/HandWritten_Digits_Using_GAN.ipynb)
