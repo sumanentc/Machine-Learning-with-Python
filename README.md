@@ -2,7 +2,7 @@
 
 ![Machine Learning](machine-learning.avif)
 
-### Jupyter notebooks containing sample usage of various algorithms using scikit-learn.
+### Jupyter notebooks containing sample usage of various machine learning algorithms.
 
 ### Prerequisite
 We require **Python 3.9** with **Pipenv** and **Git** installed. 
