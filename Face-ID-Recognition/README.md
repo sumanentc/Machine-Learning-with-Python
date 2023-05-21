@@ -4,6 +4,8 @@ Here we will build an application that can recognize if two faces belong to the 
 
 ![](face-id-recog.png)
 
+![](face-id-1.png)
+
 To build this application we will leverage the below models. We will combine Zero-shot object model and SentenceTransformer.
 * OWL-ViT : Zero-shot object detection is supported by the OWL-ViT model which uses a different approach. OWL-ViT is an open-vocabulary object detector. It means that it can detect objects in images based on free-text queries without the need to fine-tune the model on labeled datasets.
 * Clip-ViT-L-14 : This is the Image & Text model CLIP, which maps text and images to a shared vector space. 
