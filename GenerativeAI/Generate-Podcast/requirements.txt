@@ -4,3 +4,4 @@ tiktoken
 openai
 elevenlabs
 nltk
+Pillow

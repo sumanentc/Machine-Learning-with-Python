@@ -3,11 +3,14 @@ import wikipedia
 import tiktoken
 import nltk
 import openai
+from PIL import Image
 
 nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
+image = Image.open('ai-podcast.jpg')
+st.image(image)
 
 
 def split_text(input_text):
@@ -82,7 +85,6 @@ if input_text:
         split_sents = split_text(wiki_input)
         input_chunks = create_chunks(split_sents, max_token_len=2000)
 
-
     if not openai_key:
         st.error("OpenAI key needs to be provided!")
     else:
@@ -93,6 +95,9 @@ if input_text:
         for text in input_chunks:
             requestMessage = instructPrompt + f"Result: ```{text}```"
             requestMessages.append(requestMessage)
-        chatOutputs = get_chat_outputs(requestMessages)
-        podcast_facts = get_podcast_facts(chatOutputs)
+        try:
+            chatOutputs = get_chat_outputs(requestMessages)
+            podcast_facts = get_podcast_facts(chatOutputs)
+        except ex:
+            st.error(f"Exception occurred while interacting with OpenAI {ex}")
         st.text_area(label="", value=podcast_facts, height=200)
