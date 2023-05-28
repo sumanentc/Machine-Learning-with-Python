@@ -139,7 +139,11 @@ if input_text:
 
     if not openai_key:
         st.error("OpenAI key needs to be provided!")
-    else:
+
+    if not elevenlabs_key:
+        st.error("ElevenLabs key needs to be provided!")
+
+    if openai_key and elevenlabs_key:
         openai.api_key = openai_key
         instructPrompt = get_instruct_prompt(topic_name)
         requestMessages = []
@@ -167,7 +171,6 @@ if input_text:
             if conv_content:
                 st.text_area(label="", value=conv_content, height=200)
                 try:
-
                     if elevenlabs_key:
                         set_api_key(elevenlabs_key)
                         with st.spinner('Generating podcast audio ...'):
