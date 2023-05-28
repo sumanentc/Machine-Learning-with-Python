@@ -28,3 +28,4 @@ SR No   | Project |
 4 | [Breast Cancer Detection](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/breast_cancer_classifier.ipynb)
 5 | [Generate Handwritten Digits using GAN](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/HandWritten_Digits_Using_GAN.ipynb)
 6 | [Face-Id-Recognition](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Face-ID-Recognition/Face_ID_Detection.ipynb)
+7 | [AI Generated Podcast](https://github.com/sumanentc/Machine-Learning-with-Python/tree/main/GenerativeAI/Generate-Podcast)

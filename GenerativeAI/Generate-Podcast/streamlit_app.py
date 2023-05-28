@@ -128,6 +128,7 @@ if input_text:
     topic_name = st.text_input(label="Enter the Podcast Topic ", value="Sports")
     podcast_name = st.text_input(label="Enter Podcast Name", value="Sport 101")
     openai_key = st.text_input(label="Enter OpenAI Key", type="password")
+    elevenlabs_key = st.text_input(label="Enter ElevenLabs API Key", type="password")
 
     if wikipedia_id:
         enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
@@ -166,7 +167,7 @@ if input_text:
             if conv_content:
                 st.text_area(label="", value=conv_content, height=200)
                 try:
-                    elevenlabs_key = st.text_input(label="Enter ElevenLabs API Key", type="password")
+
                     if elevenlabs_key:
                         set_api_key(elevenlabs_key)
                         with st.spinner('Generating podcast audio ...'):
@@ -186,13 +187,3 @@ if input_text:
                     audio_bytes = audio_file.read()
 
                     st.audio(audio_bytes, format='audio/ogg')
-
-                    sample_rate = 44100  # 44100 samples per second
-                    seconds = 2  # Note duration of 2 seconds
-                    frequency_la = 440  # Our played note will be 440 Hz
-                    # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
-                    t = np.linspace(0, seconds, seconds * sample_rate, False)
-                    # Generate a 440 Hz sine wave
-                    note_la = np.sin(frequency_la * t * 2 * np.pi)
-
-                    st.audio(note_la, sample_rate=sample_rate)
