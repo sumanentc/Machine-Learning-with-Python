@@ -3,15 +3,15 @@ import wikipedia
 import tiktoken
 import nltk
 import openai
+from PIL import Image
 
 nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
 
-
-# htp = "https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg"
-# st.image(htp)
+img = Image.open('./ai-podcast.jpg')
+st.image(img)
 
 
 def split_text(input_text):
@@ -100,4 +100,5 @@ if input_text:
             podcast_facts = get_podcast_facts(chatOutputs)
         except Exception as ex:
             st.error(f"Exception occurred while interacting with OpenAI {ex}")
-        st.text_area(label="", value=podcast_facts, height=200)
+        if podcast_facts:
+            st.text_area(label="", value=podcast_facts, height=200)
