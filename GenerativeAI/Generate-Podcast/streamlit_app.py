@@ -92,12 +92,14 @@ if input_text:
         openai.api_key = openai_key
         instructPrompt = get_instruct_prompt(topic_name)
         requestMessages = []
+        podcast_facts = None
         for text in input_chunks:
             requestMessage = instructPrompt + f"Result: ```{text}```"
             requestMessages.append(requestMessage)
         try:
-            chatOutputs = get_chat_outputs(requestMessages)
-            podcast_facts = get_podcast_facts(chatOutputs)
+            with st.spinner('Processing the request ...'):
+                chatOutputs = get_chat_outputs(requestMessages)
+                podcast_facts = get_podcast_facts(chatOutputs)
         except Exception as ex:
             st.error(f"Exception occurred while interacting with OpenAI {ex}")
         if podcast_facts:
