@@ -10,7 +10,7 @@ from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
 
-img = Image.open('./app/machine-learning-with-python/GenerativeAI/Generate-Podcast/ai-podcast.jpg')
+img = Image.open('./GenerativeAI/Generate-Podcast/ai-podcast.jpg')
 st.image(img)
 
 
