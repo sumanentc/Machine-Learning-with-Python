@@ -53,3 +53,4 @@ if input_text:
         split_sents = split_text(wiki_input)
         input_chunks = create_chunks(split_sents, max_token_len=2000)
         print(len(input_chunks))
+        st.text_area(label="", value=input_chunks, height=100)
