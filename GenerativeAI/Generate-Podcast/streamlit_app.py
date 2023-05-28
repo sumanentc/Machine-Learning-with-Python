@@ -50,8 +50,7 @@ if input_text:
         wiki_input = input.content
         split_sents = split_text(wiki_input)
         input_chunks = create_chunks(split_sents, max_token_len=2000)
-        print(len(input_chunks))
-        st.text_area(label="", value=input_chunks, height=100)
+        st.text_area(label="", value=input_chunks[0], height=100)
 
     if not openai_key:
         st.error("OpenAI key needs to be provided!")
