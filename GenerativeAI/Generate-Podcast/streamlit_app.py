@@ -9,7 +9,7 @@ nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
-image = Image.open('https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg')
+image = Image.open('./ai-podcast.jpg')
 st.image(image)
 
 
