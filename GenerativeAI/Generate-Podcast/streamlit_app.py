@@ -42,9 +42,7 @@ if input_text:
     if not wikipedia_id:
         st.error("Valid Wikipedia URL needs to be provided")
 
-    openai_key = st.text_input(label="Enter OpenAI Key")
-    if not openai_key:
-        st.error("OpenAI key needs to be provided!")
+    openai_key = st.text_input(label="Enter OpenAI Key",type="password")
 
     if wikipedia_id:
         enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
@@ -54,3 +52,6 @@ if input_text:
         input_chunks = create_chunks(split_sents, max_token_len=2000)
         print(len(input_chunks))
         st.text_area(label="", value=input_chunks, height=100)
+
+    if not openai_key:
+        st.error("OpenAI key needs to be provided!")
