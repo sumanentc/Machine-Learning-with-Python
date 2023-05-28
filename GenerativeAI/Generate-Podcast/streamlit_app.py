@@ -46,6 +46,25 @@ def get_instruct_prompt(topic):
     """
 
 
+def get_conv_prompt(podcast_name, podcastFacts):
+    podcastPrompt = f"""
+    You are a writer creating the script for the another episode of a podcast {podcast_name} hosted by \"Tom\" and \"Jerry\".
+    Use \"Tom\" as the person asking questions and \"Jerry\" as the person providing interesting insights to those questions.
+    Always specify speaker name as  \"Tom\" or \"Jerry\" to identify who is speaking.
+    Make the convesation casual and interesting.
+    Extract relevant information for the podcast conversation from the Result delimited by triple quotes.
+    Use the below format for the podcast conversation.
+    1. Introduction about the topic and welcome everyone for another episode of the podcast {podcast_name}.
+    2. Tom is the main host.
+    2. Introduce both the speakers in brief.
+    3. Then start the conversation.
+    4. Start the conversation with some casual discussion like what they are doing right now at this moment.
+    5. End the conversation with thank you speech to everyone.
+    6. Do not use the word \"conversation\" response.
+    """
+    return podcastPrompt + f"Result: ```{podcastFacts}```"
+
+
 def get_chat_outputs(requestMessages):
     chatOutputs = []
     for request in requestMessages:
@@ -57,6 +76,16 @@ def get_chat_outputs(requestMessages):
                                                   )
         chatOutputs.append(chatOutput)
     return chatOutputs
+
+
+def get_conv_output(requestMessage):
+    finalOutput = openai.ChatCompletion.create(model="gpt-3.5-turbo",
+                                               messages=[{"role": "system", "content": "You are a helpful assistant."},
+                                                         {"role": "user", "content": requestMessage}
+                                                         ],
+                                               temperature=0.7
+                                               )
+    return finalOutput.choices[0].message.content
 
 
 def get_podcast_facts(chatOutputs):
@@ -76,7 +105,8 @@ else:
 if input_text:
     if not wikipedia_id:
         st.error("Valid Wikipedia URL needs to be provided")
-    topic_name = st.text_input(label="Enter Podcast Topic Name", value="Sports")
+    topic_name = st.text_input(label="Enter the Podcast Topic ", value="Sports")
+    podcast_name = st.text_input(label="Enter Podcast Name", value="Sport 101")
     openai_key = st.text_input(label="Enter OpenAI Key", type="password")
 
     if wikipedia_id:
@@ -93,14 +123,23 @@ if input_text:
         instructPrompt = get_instruct_prompt(topic_name)
         requestMessages = []
         podcast_facts = None
+        conv_content = None
         for text in input_chunks:
             requestMessage = instructPrompt + f"Result: ```{text}```"
             requestMessages.append(requestMessage)
         try:
-            with st.spinner('Processing the request ...'):
+            with st.spinner('Generating podcast content ...'):
                 chatOutputs = get_chat_outputs(requestMessages)
                 podcast_facts = get_podcast_facts(chatOutputs)
         except Exception as ex:
             st.error(f"Exception occurred while interacting with OpenAI {ex}")
         if podcast_facts:
-            st.text_area(label="", value=podcast_facts, height=200)
+            try:
+                with st.spinner('Generating conversational content ...'):
+                    conv_prompt = get_conv_prompt(podcast_name, podcast_facts)
+                    conv_content = get_conv_output(conv_prompt)
+            except Exception as ex:
+                st.error(f"Exception occurred while interacting with OpenAI {ex}")
+            if conv_content:
+                st.text_area(label="", value=conv_content, height=200)
+
