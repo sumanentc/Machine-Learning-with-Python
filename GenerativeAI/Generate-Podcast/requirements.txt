@@ -3,3 +3,4 @@ wikipedia
 tiktoken
 openai
 elevenlabs
+nltk
