@@ -11,7 +11,7 @@ Here we will use the topic : [Lionel messi](https://en.wikipedia.org/wiki/Lionel
 * Generate Podcast Conversation content: Here also, we will use LLM-based model to generate the conversation using the above content. We are using OpenAI [gpt-3.5-turbo](https://platform.openai.com/docs/models/gpt-3-5) model for Podcast conversation generation.
 * Generate voice for the podcast conversation: Here we will use [ElevenLabs](https://beta.elevenlabs.io/) to generate custom voice conversation for the podcast.
 
-Sample output for PodCast : ![](genPodcast.mp4)
+Sample output for PodCast : [![AI generated Podcast]()](genPodcast.mp4)
 
 ### References
 * https://beta.elevenlabs.io/
