@@ -8,8 +8,10 @@ nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
-htp = "https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg"
-st.image(htp)
+
+
+# htp = "https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg"
+# st.image(htp)
 
 
 def split_text(input_text):
@@ -74,7 +76,7 @@ else:
 if input_text:
     if not wikipedia_id:
         st.error("Valid Wikipedia URL needs to be provided")
-
+    topic_name = st.text_input(label="Enter Podcast Topic Name", value="Sports")
     openai_key = st.text_input(label="Enter OpenAI Key", type="password")
 
     if wikipedia_id:
@@ -88,7 +90,6 @@ if input_text:
         st.error("OpenAI key needs to be provided!")
     else:
         openai.api_key = openai_key
-        topic_name = st.text_input(label="Enter Podcast Topic Name", value="Sports")
         instructPrompt = get_instruct_prompt(topic_name)
         requestMessages = []
         for text in input_chunks:
@@ -97,6 +98,6 @@ if input_text:
         try:
             chatOutputs = get_chat_outputs(requestMessages)
             podcast_facts = get_podcast_facts(chatOutputs)
-        except ex:
+        except Exception as ex:
             st.error(f"Exception occurred while interacting with OpenAI {ex}")
         st.text_area(label="", value=podcast_facts, height=200)
