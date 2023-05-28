@@ -1,16 +1,14 @@
-import streamlit as st
-import wikipedia
-import tiktoken
 import nltk
 import openai
-from PIL import Image
+import streamlit as st
+import tiktoken
+import wikipedia
 
 nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
-htp = "https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg"
-st.image(htp, caption='logo')
+st.image('ai-podcast.jpg', caption='logo')
 
 
 def split_text(input_text):
