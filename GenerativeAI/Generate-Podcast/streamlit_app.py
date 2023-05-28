@@ -31,7 +31,7 @@ def create_chunks(split_sents, max_token_len=2500):
     return input_chunks
 
 
-input_text = st.text_input("Enter Wikipedia URL")
+input_text = st.text_input(label="Enter Wikipedia URL",value="https://en.wikipedia.org/wiki/Lionel_Messi")
 
 if not input_text:
     st.error("Valid Wikipedia URL needs to be provided")
@@ -42,7 +42,7 @@ if input_text:
     if not wikipedia_id:
         st.error("Valid Wikipedia URL needs to be provided")
 
-    openai_key = st.text_input("Enter OpenAI Key")
+    openai_key = st.text_input(label="Enter OpenAI Key")
     if not openai_key:
         st.error("OpenAI key needs to be provided!")
 
