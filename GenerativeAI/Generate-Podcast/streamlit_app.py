@@ -35,7 +35,8 @@ input_text = st.text_input("Enter Wikipedia URL")
 
 if not input_text:
     st.error("Valid Wikipedia URL needs to be provided")
-wikipedia_id = input_text.rsplit('/', 1)[-1]
+else:
+    wikipedia_id = input_text.rsplit('/', 1)[-1]
 
 if not wikipedia_id:
     st.error("Valid Wikipedia URL needs to be provided")
@@ -44,9 +45,10 @@ openai_key = st.text_input("Enter OpenAI Key")
 if not openai_key:
     st.error("OpenAI key needs to be provided!")
 
-enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
-input = wikipedia.page(wikipedia_id, auto_suggest=False)
-wiki_input = input.content
-split_sents = split_text(wiki_input)
-input_chunks = create_chunks(split_sents, max_token_len=2000)
-print(len(input_chunks))
+if wikipedia_id:
+    enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
+    input = wikipedia.page(wikipedia_id, auto_suggest=False)
+    wiki_input = input.content
+    split_sents = split_text(wiki_input)
+    input_chunks = create_chunks(split_sents, max_token_len=2000)
+    print(len(input_chunks))
