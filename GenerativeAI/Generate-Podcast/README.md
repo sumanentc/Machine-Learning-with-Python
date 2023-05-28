@@ -4,6 +4,11 @@ Here we will see, how can we use LLM to generate the contents of an interactive 
 
 ![](ai-podcast.jpg)
 
+### Prerequisite
+To run this application we will need below API keys.
+* OpenAPI Key : [Get OpenAPI key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)
+* ElevenLabs API Key : [ElevelLabs Key](https://docs.elevenlabs.io/api-reference/quick-start/authentication)
+
 To build this application we will need to perform the below steps.
 * Gather Data : To generate any content we will need the data first. Here we will use Wikipedia data to generate the contents. Data can be generated from other sources also.
 Here we will use the topic : [Lionel messi](https://en.wikipedia.org/wiki/Lionel_Messi)
@@ -12,6 +17,8 @@ Here we will use the topic : [Lionel messi](https://en.wikipedia.org/wiki/Lionel
 * Generate voice for the podcast conversation: Here we will use [ElevenLabs](https://beta.elevenlabs.io/) to generate custom voice conversation for the podcast.
 
 Sample output for PodCast : [![AI generated Podcast]()](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/genPodcast.mp4)
+
+Streamlit App : [AI generated Podcast](https://sumanentc-mach-generativeaigenerate-podcaststreamlit-app-b1az6x.streamlit.app/)
 
 ### References
 * https://beta.elevenlabs.io/

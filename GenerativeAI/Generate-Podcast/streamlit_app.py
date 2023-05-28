@@ -4,6 +4,9 @@ import tiktoken
 import nltk
 import openai
 from PIL import Image
+from elevenlabs import set_api_key
+from elevenlabs import generate
+import numpy as np
 
 nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
@@ -95,6 +98,23 @@ def get_podcast_facts(chatOutputs):
     return podcastFacts
 
 
+def createPodcast(podcastScript, speakerName1, speakerChoice1, speakerName2, speakerChoice2):
+    genPodcast = []
+    podcastLines = podcastScript.split('\n\n')
+    podcastLineNumber = 0
+    for line in podcastLines:
+        if podcastLineNumber % 2 == 0:
+            speakerChoice = speakerChoice1
+            line = line.replace(speakerName1 + ":", '')
+        else:
+            speakerChoice = speakerChoice2
+            line = line.replace(speakerName2 + ":", '')
+        genVoice = generate(text=line, voice=speakerChoice, model="eleven_monolingual_v1")
+        genPodcast.append(genVoice)
+        podcastLineNumber += 1
+    return genPodcast
+
+
 input_text = st.text_input(label="Enter Wikipedia URL", value="https://en.wikipedia.org/wiki/Lionel_Messi")
 
 if not input_text:
@@ -124,6 +144,7 @@ if input_text:
         requestMessages = []
         podcast_facts = None
         conv_content = None
+        genPodcast = None
         for text in input_chunks:
             requestMessage = instructPrompt + f"Result: ```{text}```"
             requestMessages.append(requestMessage)
@@ -131,6 +152,7 @@ if input_text:
             with st.spinner('Generating podcast content ...'):
                 chatOutputs = get_chat_outputs(requestMessages)
                 podcast_facts = get_podcast_facts(chatOutputs)
+            st.success('Content Generated!')
         except Exception as ex:
             st.error(f"Exception occurred while interacting with OpenAI {ex}")
         if podcast_facts:
@@ -138,8 +160,39 @@ if input_text:
                 with st.spinner('Generating conversational content ...'):
                     conv_prompt = get_conv_prompt(podcast_name, podcast_facts)
                     conv_content = get_conv_output(conv_prompt)
+                st.success('Conversation Generated!')
             except Exception as ex:
                 st.error(f"Exception occurred while interacting with OpenAI {ex}")
             if conv_content:
                 st.text_area(label="", value=conv_content, height=200)
+                try:
+                    elevenlabs_key = st.text_input(label="Enter ElevenLabs API Key", type="password")
+                    if elevenlabs_key:
+                        set_api_key(elevenlabs_key)
+                        with st.spinner('Generating podcast audio ...'):
+                            speakerName1 = "Tom"
+                            speakerChoice1 = "Adam"
+                            speakerName2 = "Jerry"
+                            speakerChoice2 = "Domi"
+                            genPodcast = createPodcast(conv_content, speakerName1, speakerChoice1, speakerName2, speakerChoice2)
+                except Exception as ex:
+                    st.error(f"Exception occurred while interacting with ElevelLabs {ex}")
+                if genPodcast:
+                    with open("genPodcast.mpeg", "wb") as f:
+                        for pod in genPodcast:
+                            f.write(pod)
 
+                    audio_file = open('genPodcast.mpeg', 'rb')
+                    audio_bytes = audio_file.read()
+
+                    st.audio(audio_bytes, format='audio/ogg')
+
+                    sample_rate = 44100  # 44100 samples per second
+                    seconds = 2  # Note duration of 2 seconds
+                    frequency_la = 440  # Our played note will be 440 Hz
+                    # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
+                    t = np.linspace(0, seconds, seconds * sample_rate, False)
+                    # Generate a 440 Hz sine wave
+                    note_la = np.sin(frequency_la * t * 2 * np.pi)
+
+                    st.audio(note_la, sample_rate=sample_rate)
