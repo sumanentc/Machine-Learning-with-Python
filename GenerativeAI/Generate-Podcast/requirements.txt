@@ -1,0 +1,5 @@
+streamlit
+wikipedia
+tiktoken
+openai
+elevenlabs
