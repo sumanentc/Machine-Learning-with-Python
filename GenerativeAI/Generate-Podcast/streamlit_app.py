@@ -10,7 +10,7 @@ from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
 htp = "https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg"
-st.image(htp, caption='logo', width=350)
+st.image(htp, caption='logo')
 
 
 def split_text(input_text):
