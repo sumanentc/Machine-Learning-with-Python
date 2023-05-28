@@ -9,8 +9,8 @@ nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 st.title('AI Generated Podcast')
-image = Image.open('./ai-podcast.jpg')
-st.image(image)
+htp = "https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Generate-Podcast/ai-podcast.jpg"
+st.image(htp, caption='logo', width=350)
 
 
 def split_text(input_text):
