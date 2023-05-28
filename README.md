@@ -14,11 +14,9 @@ To begin with, clone the project in any directory on the disk. Navigate to the p
 
 The virtual environment will now be activated, which will provide the required project isolation and version locking.
 
-Next, install all the required dependencies from **Pipfile** using Pipenv as shown.
+Next, install all the required dependencies from **Pipfile** using Pipenv as shown below.
 
 ```pipenv install```
-
-* Classification
 
 SR No   | Project |
 --- | --- 
