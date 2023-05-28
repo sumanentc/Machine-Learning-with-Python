@@ -127,8 +127,8 @@ if input_text:
         st.error("Valid Wikipedia URL needs to be provided")
     topic_name = st.text_input(label="Enter the Podcast Topic ", value="Sports")
     podcast_name = st.text_input(label="Enter Podcast Name", value="Sport 101")
-    openai_key = st.text_input(label="Enter OpenAI Key", type="password")
-    elevenlabs_key = st.text_input(label="Enter ElevenLabs API Key", type="password")
+    openai_key = st.text_input(label="Enter OpenAI Key", type="password",help="https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key")
+    elevenlabs_key = st.text_input(label="Enter ElevenLabs API Key", type="password", help="https://docs.elevenlabs.io/api-reference/quick-start/authentication")
 
     if wikipedia_id:
         enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
