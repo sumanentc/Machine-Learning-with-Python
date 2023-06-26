@@ -27,3 +27,4 @@ SR No   | Project |
 5 | [Generate Handwritten Digits using GAN](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/HandWritten_Digits_Using_GAN.ipynb)
 6 | [Face-Id-Recognition](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Face-ID-Recognition/Face_ID_Detection.ipynb)
 7 | [AI Generated Podcast](https://github.com/sumanentc/Machine-Learning-with-Python/tree/main/GenerativeAI/Generate-Podcast)
+8 | [Movie Genre Prediction](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Movie_Genre_Prediction.ipynb)
