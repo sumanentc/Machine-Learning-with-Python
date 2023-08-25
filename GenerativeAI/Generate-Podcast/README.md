@@ -20,8 +20,14 @@ Sample output for PodCast : [![AI generated Podcast](messi.jpg)](https://github.
 
 Streamlit App : [AI generated Podcast](https://sumanentc-mach-generativeaigenerate-podcaststreamlit-app-b1az6x.streamlit.app/)
 
+**Video demonstration (click the picture):**
+
+[![AI-Generated-Podcast](./ai-podcast.jpg)](https://youtu.be/pnGz6mbjOPo?si=ayzhO3fyVNVLPfz5)
+
 ### References
-* https://beta.elevenlabs.io/
+* https://elevenlabs.io/
 * https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
 * https://github.com/openai/openai-cookbook/tree/main
 * https://docs.streamlit.io/library/get-started/create-an-app
+* https://python.langchain.com/docs/use_cases/summarization
+* 
