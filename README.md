@@ -28,3 +28,4 @@ SR No   | Project |
 6 | [Face-Id-Recognition](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Face-ID-Recognition/Face_ID_Detection.ipynb)
 7 | [AI Generated Podcast](https://github.com/sumanentc/Machine-Learning-with-Python/tree/main/GenerativeAI/Generate-Podcast)
 8 | [Movie Genre Prediction](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/Classification/Movie_Genre_Prediction.ipynb)
+9 | [Ghibli-style-podcast](https://github.com/sumanentc/Machine-Learning-with-Python/blob/main/GenerativeAI/Ghibli_style_podcast.ipynb)
